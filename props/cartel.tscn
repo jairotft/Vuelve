@@ -1,0 +1,245 @@
+[gd_scene load_steps=10 format=2]
+
+[ext_resource path="res://props/cartel.gd" type="Script" id=1]
+[ext_resource path="res://props/box.png" type="Texture" id=2]
+[ext_resource path="res://props/enter.png" type="Texture" id=3]
+[ext_resource path="res://Retron2000.ttf" type="DynamicFontData" id=4]
+
+[sub_resource type="DynamicFont" id=1]
+
+size = 23
+font_data = ExtResource( 4 )
+
+[sub_resource type="DynamicFont" id=2]
+
+size = 33
+font_data = ExtResource( 4 )
+
+[sub_resource type="Animation" id=3]
+
+length = 0.5
+step = 0.05
+tracks/0/type = "value"
+tracks/0/path = NodePath("textbox:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0, -90 ), Vector2( 0, -17.1063 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("textbox:scale")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.25, 0.5 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 1, 1 ), Vector2( 0.104948, 0.500005 ), Vector2( 1e-05, 1e-05 ) ]
+}
+
+[sub_resource type="Animation" id=4]
+
+length = 0.5
+step = 0.05
+tracks/0/type = "value"
+tracks/0/path = NodePath("textbox:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0, -18.1525 ), Vector2( 0, -90 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("textbox:rotation_degrees")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = false
+tracks/1/keys = {
+"times": PoolRealArray( 1 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0.0 ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("textbox:scale")
+tracks/2/interp = 2
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 0.25, 0.5 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 1e-05, 1e-05 ), Vector2( 0.10648, 0.500005 ), Vector2( 1, 1 ) ]
+}
+
+[sub_resource type="RectangleShape2D" id=5]
+
+extents = Vector2( 1.60438, 10 )
+
+[node name="cartel" type="KinematicBody2D"]
+position = Vector2( 270.757, 199.604 )
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite2" type="Sprite" parent="."]
+modulate = Color( 0.644531, 0.504937, 0.264359, 1 )
+position = Vector2( 0, -11.4741 )
+scale = Vector2( 0.0462903, 0.446731 )
+texture = ExtResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="."]
+editor/display_folded = true
+modulate = Color( 0.847656, 0.68109, 0.394028, 1 )
+position = Vector2( 0, -18.3973 )
+scale = Vector2( 0.344764, 0.199358 )
+texture = ExtResource( 2 )
+
+[node name="Sprite3" type="Sprite" parent="Sprite"]
+modulate = Color( 0.847656, 0.68109, 0.394028, 1 )
+position = Vector2( 0, -21.6078 )
+scale = Vector2( 0.852964, 0.136638 )
+texture = ExtResource( 2 )
+
+[node name="Sprite4" type="Sprite" parent="Sprite"]
+modulate = Color( 0.847656, 0.68109, 0.394028, 1 )
+position = Vector2( 0, -8.10294 )
+scale = Vector2( 0.852964, 0.136638 )
+texture = ExtResource( 2 )
+
+[node name="Sprite5" type="Sprite" parent="Sprite"]
+modulate = Color( 0.847656, 0.68109, 0.394028, 1 )
+position = Vector2( 0, 6.30228 )
+scale = Vector2( 0.852964, 0.136638 )
+texture = ExtResource( 2 )
+
+[node name="Sprite6" type="Sprite" parent="Sprite"]
+modulate = Color( 0.847656, 0.68109, 0.394028, 1 )
+position = Vector2( 0, 20.7075 )
+scale = Vector2( 0.852964, 0.136638 )
+texture = ExtResource( 2 )
+
+[node name="textbox" type="Sprite" parent="."]
+editor/display_folded = true
+self_modulate = Color( 1, 1, 1, 0 )
+show_behind_parent = true
+position = Vector2( 0, -17.1063 )
+scale = Vector2( 1e-05, 1e-05 )
+z_index = 5
+texture = ExtResource( 2 )
+
+[node name="Label" type="Label" parent="textbox"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -207.0
+margin_top = -137.0
+margin_right = 144.0
+margin_bottom = 1.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_constants/line_spacing = 0
+text = "text"
+align = 1
+valign = 1
+autowrap = true
+clip_text = true
+
+[node name="textbox2" type="Sprite" parent="textbox"]
+modulate = Color( 0.621094, 0.540424, 0.349365, 1 )
+show_behind_parent = true
+position = Vector2( 0, -36.3673 )
+scale = Vector2( 5.64117, 2.32089 )
+texture = ExtResource( 2 )
+
+[node name="textbox3" type="Sprite" parent="textbox"]
+modulate = Color( 1, 0.905882, 0.694118, 1 )
+show_behind_parent = true
+position = Vector2( 0, -36.3673 )
+scale = Vector2( 5.54733, 2.22417 )
+texture = ExtResource( 2 )
+
+[node name="Labelmovil2" type="Label" parent="textbox"]
+visible = false
+margin_left = 136.0
+margin_top = 29.0
+margin_right = 178.0
+margin_bottom = 66.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "Tap"
+align = 1
+valign = 1
+autowrap = true
+
+[node name="enter" type="Sprite" parent="textbox"]
+editor/display_folded = true
+visible = false
+self_modulate = Color( 1, 1, 1, 0.839804 )
+position = Vector2( 0, -38 )
+texture = ExtResource( 3 )
+
+[node name="Labelpc" type="Label" parent="textbox/enter"]
+margin_left = -59.0
+margin_top = -42.0
+margin_right = 58.0
+margin_bottom = 42.0
+size_flags_vertical = 5
+custom_fonts/font = SubResource( 1 )
+custom_constants/line_spacing = 0
+text = "PRESSENTER"
+align = 1
+valign = 1
+autowrap = true
+
+[node name="Labelmovil" type="Label" parent="textbox/enter"]
+visible = false
+margin_left = -62.0
+margin_top = -47.0
+margin_right = 62.0
+margin_bottom = 43.0
+custom_fonts/font = SubResource( 2 )
+text = "TAP"
+align = 1
+valign = 1
+autowrap = true
+
+[node name="TouchScreenButton" type="TouchScreenButton" parent="textbox/enter"]
+self_modulate = Color( 1, 1, 1, 0 )
+position = Vector2( -71.3599, -71.3599 )
+scale = Vector2( 1.11115, 1.11115 )
+normal = ExtResource( 3 )
+visibility_mode = 1
+
+[node name="TouchScreenButton2" type="TouchScreenButton" parent="textbox"]
+self_modulate = Color( 1, 1, 1, 0 )
+position = Vector2( -316.123, -226.388 )
+scale = Vector2( 4.93557, 2.93948 )
+normal = ExtResource( 3 )
+visibility_mode = 1
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+playback_speed = 3.0
+anims/close = SubResource( 3 )
+anims/open = SubResource( 4 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( 0, -10.3992 )
+shape = SubResource( 5 )
+
+[node name="RayCast2D" type="RayCast2D" parent="."]
+position = Vector2( 0, -35.4709 )
+

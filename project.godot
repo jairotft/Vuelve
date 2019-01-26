@@ -18,6 +18,16 @@ _global_script_class_icons={
 config/name="The_Return"
 config/icon="res://icon.png"
 
+[autoload]
+
+global="*res://global.tscn"
+
+[display]
+
+window/size/width=1280
+window/size/height=720
+window/stretch/aspect="keep"
+
 [rendering]
 
 environment/default_environment="res://default_env.tres"
