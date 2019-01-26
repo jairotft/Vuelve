@@ -16,6 +16,7 @@ _global_script_class_icons={
 [application]
 
 config/name="The_Return"
+run/main_scene="res://scenes/Inicio.tscn"
 config/icon="res://icon.png"
 
 [autoload]

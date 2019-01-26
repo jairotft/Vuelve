@@ -1,7 +1,141 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://global.gd" type="Script" id=1]
+[ext_resource path="res://props/box.png" type="Texture" id=2]
+
+[sub_resource type="Animation" id=1]
+
+resource_name = "vineta"
+length = 5.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("vineta:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5, 1, 4, 4.5, 5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0, -160 ), Vector2( 0, 0 ), Vector2( 0, 0 ), Vector2( 0, 0 ), Vector2( 0, 0 ), Vector2( 0, -160 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("vineta:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.1, 4.9, 5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ false, true, true, false ]
+}
+
+[sub_resource type="Animation" id=2]
+
+resource_name = "transition_in"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/path = NodePath("transition:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( -770, -700 ), Vector2( 590, 350 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("transition:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.1, 0.5 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ false, true, true ]
+}
+
+[sub_resource type="Animation" id=3]
+
+resource_name = "transition_out"
+length = 0.6
+tracks/0/type = "value"
+tracks/0/path = NodePath("transition:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 590, 350 ), Vector2( 1980, 1400 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("transition:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.5, 0.6 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ true, true, false ]
+}
 
 [node name="global" type="Node2D"]
+z_index = 10
 script = ExtResource( 1 )
 
+[node name="animationvineta" type="AnimationPlayer" parent="."]
+anims/vineta = SubResource( 1 )
+
+[node name="animationtransition" type="AnimationPlayer" parent="."]
+anims/transition_in = SubResource( 2 )
+anims/transition_out = SubResource( 3 )
+
+[node name="vineta" type="Node2D" parent="."]
+editor/display_folded = true
+visible = false
+position = Vector2( 0, -160 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="box" type="Sprite" parent="vineta"]
+position = Vector2( 640, 80 )
+scale = Vector2( 19.375, 1.875 )
+texture = ExtResource( 2 )
+
+[node name="Label" type="Label" parent="vineta"]
+self_modulate = Color( 0, 0, 0, 1 )
+margin_left = 30.0
+margin_top = 30.0
+margin_right = 1250.0
+margin_bottom = 130.0
+text = "texto de ejemplo
+"
+align = 1
+valign = 1
+autowrap = true
+
+[node name="transition" type="Node2D" parent="."]
+editor/display_folded = true
+visible = false
+position = Vector2( -770, -700 )
+
+[node name="box" type="Sprite" parent="transition"]
+self_modulate = Color( 0, 0, 0, 1 )
+position = Vector2( 60, -30 )
+rotation = 0.785398
+scale = Vector2( 28.2627, 37.5177 )
+texture = ExtResource( 2 )
+
+[connection signal="animation_finished" from="animationtransition" to="." method="_on_animationtransition_animation_finished"]
