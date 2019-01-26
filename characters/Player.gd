@@ -26,6 +26,9 @@ func _physics_process(delta):
 	if Input.is_action_just_pressed("ui_up") and is_on_floor():
 		movimiento.y = -salto
 		player_jumped = true
+	
+	if is_on_ceiling():
+		movimiento.y = salto/4
 		
 	if not is_on_floor():
 		movimiento.y += gravedad
