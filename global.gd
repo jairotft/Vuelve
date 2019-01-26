@@ -2,7 +2,9 @@ extends Node2D
 var posicionplayer = Vector2()
 var playercanmove = false
 var transition_scenetogo = ""
-
+func _process(delta):
+	if Input.is_action_just_pressed("ui_page_up"):
+		OS.window_fullscreen = !OS.window_fullscreen 
 func vineta(texto):
 	$vineta/Label.text = texto
 	$animationvineta.current_animation = "vineta"
