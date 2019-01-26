@@ -38,4 +38,6 @@ func _physics_process(delta):
 	movimiento.x /= friccion
 	
 	move_and_slide(movimiento,UP)
+	
+	global.posicionplayer = global_position
 
