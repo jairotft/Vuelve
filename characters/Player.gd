@@ -16,8 +16,12 @@ func _physics_process(delta):
 		
 	if Input.is_action_pressed("ui_right"):
 		movimiento.x += velocidad
+		$Sprite.flip_h = true
+		$Sprite/ojosizquierda.flip_h = true
 	if Input.is_action_pressed("ui_left"):
 		movimiento.x -= velocidad
+		$Sprite.flip_h = false
+		$Sprite/ojosizquierda.flip_h = false
 		
 	if Input.is_action_just_pressed("ui_up") and !is_on_floor() and doble_enabled:
 		movimiento.y = -(salto/1.2)

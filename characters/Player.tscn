@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://characters/Player.gd" type="Script" id=1]
-[ext_resource path="res://props/enter.png" type="Texture" id=2]
-[ext_resource path="res://sprites/characters/RadialGradient.png" type="Texture" id=3]
+[ext_resource path="res://sprites/characters/personajeprincipal.png" type="Texture" id=2]
+[ext_resource path="res://sprites/characters/ojosizquierda.png" type="Texture" id=3]
+[ext_resource path="res://sprites/characters/gradienteblanco.png" type="Texture" id=4]
 
 [sub_resource type="RectangleShape2D" id=1]
 
@@ -16,10 +17,14 @@ shape = SubResource( 1 )
 
 [node name="Sprite" type="Sprite" parent="."]
 position = Vector2( 4.76837e-07, 4.76837e-07 )
-scale = Vector2( 0.15625, 0.15625 )
+scale = Vector2( 0.0692194, 0.0692194 )
 texture = ExtResource( 2 )
 
-[node name="Light2D" type="Light2D" parent="."]
+[node name="ojosizquierda" type="Sprite" parent="Sprite"]
 texture = ExtResource( 3 )
+
+[node name="Light2D" type="Light2D" parent="."]
+texture = ExtResource( 4 )
+mode = 2
 shadow_enabled = true
 

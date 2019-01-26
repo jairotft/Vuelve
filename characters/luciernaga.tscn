@@ -4,7 +4,7 @@
 [ext_resource path="res://sprites/characters/ala_izq.png" type="Texture" id=2]
 [ext_resource path="res://sprites/characters/luicernaga_mala.png" type="Texture" id=3]
 [ext_resource path="res://sprites/characters/ala_derecha.png" type="Texture" id=4]
-[ext_resource path="res://sprites/characters/RadialGradient.png" type="Texture" id=5]
+[ext_resource path="res://sprites/characters/gradienteblanco.png" type="Texture" id=5]
 
 [sub_resource type="RectangleShape2D" id=1]
 
@@ -65,6 +65,7 @@ texture = ExtResource( 4 )
 [node name="Light2D" type="Light2D" parent="CollisionShape2D"]
 position = Vector2( 0.203911, 0.203907 )
 texture = ExtResource( 5 )
+mode = 2
 shadow_enabled = true
 
 [node name="Area2D" type="Area2D" parent="CollisionShape2D"]
