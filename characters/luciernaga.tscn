@@ -1,20 +1,48 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://characters/luciernaga.gd" type="Script" id=1]
 [ext_resource path="res://sprites/characters/luicernaga_mala.png" type="Texture" id=2]
+[ext_resource path="res://sprites/characters/RadialGradient.png" type="Texture" id=3]
 
 [sub_resource type="RectangleShape2D" id=1]
 
-extents = Vector2( 6.10209, 4.23137 )
+extents = Vector2( 6.10209, 4.30578 )
+
+[sub_resource type="Animation" id=2]
+
+resource_name = "StandFly"
+length = 2.0
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("CollisionShape2D:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1, 2 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( -0.149887, 2.84791 ), Vector2( -0.149887, 9.69943 ), Vector2( -0.149887, 2.84791 ) ]
+}
 
 [node name="luciernaga" type="KinematicBody2D"]
+position = Vector2( 75.7273, 35.7833 )
 script = ExtResource( 1 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( -0.149887, 7.14364 )
 shape = SubResource( 1 )
 
-[node name="Sprite" type="Sprite" parent="."]
-position = Vector2( 9.53674e-07, 9.53674e-07 )
+[node name="Sprite" type="Sprite" parent="CollisionShape2D"]
+position = Vector2( 0.149902, 0.57785 )
 scale = Vector2( 0.105128, 0.105128 )
 texture = ExtResource( 2 )
+
+[node name="Light2D" type="Light2D" parent="CollisionShape2D"]
+texture = ExtResource( 3 )
+shadow_enabled = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/StandFly = SubResource( 2 )
 
