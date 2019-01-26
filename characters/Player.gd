@@ -8,7 +8,7 @@ export var limite = 10
 export var friccion = 1.3
 export var salto = 500
 var doble_enabled = false
-var player_jumped = false
+var player_jumped = true
 
 
 func _physics_process(delta):
