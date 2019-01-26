@@ -1,16 +1,21 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://characters/luciernaga.gd" type="Script" id=1]
-[ext_resource path="res://sprites/characters/luicernaga_mala.png" type="Texture" id=2]
-[ext_resource path="res://sprites/characters/RadialGradient.png" type="Texture" id=3]
+[ext_resource path="res://sprites/characters/ala_izq.png" type="Texture" id=2]
+[ext_resource path="res://sprites/characters/luicernaga_mala.png" type="Texture" id=3]
+[ext_resource path="res://sprites/characters/ala_derecha.png" type="Texture" id=4]
+[ext_resource path="res://sprites/characters/RadialGradient.png" type="Texture" id=5]
 
 [sub_resource type="RectangleShape2D" id=1]
 
 extents = Vector2( 6.10209, 4.30578 )
 
-[sub_resource type="Animation" id=2]
+[sub_resource type="RectangleShape2D" id=2]
 
-resource_name = "StandFly"
+extents = Vector2( 10, 4.87449 )
+
+[sub_resource type="Animation" id=3]
+
 length = 2.0
 loop = true
 tracks/0/type = "value"
@@ -33,16 +38,47 @@ script = ExtResource( 1 )
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2( -0.149887, 7.14364 )
 shape = SubResource( 1 )
+disabled = true
 
-[node name="Sprite" type="Sprite" parent="CollisionShape2D"]
-position = Vector2( 0.149902, 0.57785 )
-scale = Vector2( 0.105128, 0.105128 )
+[node name="AlaIzquierdaori" type="Node2D" parent="CollisionShape2D"]
+position = Vector2( 1.06543, -3.63498 )
+
+[node name="AlaIzquierda" type="Sprite" parent="CollisionShape2D/AlaIzquierdaori"]
+position = Vector2( -0.735474, -2.85189 )
+scale = Vector2( 0.0987511, 0.0987511 )
 texture = ExtResource( 2 )
 
-[node name="Light2D" type="Light2D" parent="CollisionShape2D"]
+[node name="Bicho" type="Sprite" parent="CollisionShape2D"]
+position = Vector2( 0.149902, 0.57785 )
+scale = Vector2( 0.105128, 0.105128 )
 texture = ExtResource( 3 )
+
+[node name="AlaDerechaori" type="Node2D" parent="CollisionShape2D"]
+editor/display_folded = true
+position = Vector2( 2.19352, -3.44697 )
+
+[node name="AlaDerecha" type="Sprite" parent="CollisionShape2D/AlaDerechaori"]
+position = Vector2( 1.03915, -3.30379 )
+scale = Vector2( 0.0987511, 0.0987511 )
+texture = ExtResource( 4 )
+
+[node name="Light2D" type="Light2D" parent="CollisionShape2D"]
+position = Vector2( 0.203911, 0.203907 )
+texture = ExtResource( 5 )
 shadow_enabled = true
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-anims/StandFly = SubResource( 2 )
+[node name="Area2D" type="Area2D" parent="CollisionShape2D"]
 
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CollisionShape2D/Area2D"]
+visible = false
+shape = SubResource( 2 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/StandFly = SubResource( 3 )
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.05
+autostart = true
+
+[connection signal="body_entered" from="CollisionShape2D/Area2D" to="." method="_on_Area2D_body_entered"]
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]

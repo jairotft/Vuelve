@@ -6,6 +6,7 @@ export var movimiento = Vector2()
 var UP = Vector2(0,-1)
 export var friccion = 1.3
 export var es_estatica = true
+signal colicion_con_personaje
 
 
 func is_enemy_close():
@@ -45,3 +46,16 @@ func _physics_process(delta):
 		
 		move_and_slide(movimiento,UP)
 
+
+func _on_Area2D_body_entered(body):
+	print("Ingreso para senial")
+	emit_signal("colicion_con_personaje")
+
+
+func _on_Timer_timeout():
+	if $CollisionShape2D/AlaIzquierdaori.scale.y == 1:
+		$CollisionShape2D/AlaIzquierdaori.scale.y = -1
+		$CollisionShape2D/AlaDerechaori.scale.y = -1
+	else:
+		$CollisionShape2D/AlaIzquierdaori.scale.y = 1
+		$CollisionShape2D/AlaDerechaori.scale.y = 1
