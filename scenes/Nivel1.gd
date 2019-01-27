@@ -16,4 +16,20 @@ func _do_when_character_died():
 
 func _do_when_character_hit_checkpoint():
 	if global.checkpointID == 'PRIMERO':
+		$luciernagaanim.play("activado")
+		$luciernaga/CollisionShape2D/Area2D.queue_free()
 		$PRIMERO.queue_free()
+		
+	if global.checkpointID == 'SEGUNDO':
+		$luciernaga/CollisionShape2D/Area2D.queue_free()
+		$MAPA1.visible = false
+		$MAPA2.visible = true
+		$SEGUNDO.queue_free()
+		
+	if global.checkpointID == 'TERCERO':
+		$MAPA2.visible = false
+		$MAPA3.visible = true
+		
+	
+	if global.checkpointID == 'CUARTO':
+		$TERCERO.queue_free()

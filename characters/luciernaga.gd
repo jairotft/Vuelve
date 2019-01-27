@@ -8,6 +8,7 @@ var UP = Vector2(0,-1)
 export var friccion = 1.3
 export var es_estatica = true
 export var imagen = "res://sprites/characters/luicernaga_mala.png"
+export var BichoID = "ID"
 signal colicion_con_personaje
 
 
@@ -52,7 +53,7 @@ func _physics_process(delta):
 
 
 func _on_Area2D_body_entered(body):
-	global.checkpointID = 'PRIMERO'
+	global.checkpointID = BichoID
 	emit_signal("colicion_con_personaje")
 
 
