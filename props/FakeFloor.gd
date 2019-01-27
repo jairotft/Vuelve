@@ -7,10 +7,9 @@ var hit = 0
 func _ready():
 	hit = 0
 
-
-func _on_Area2D_body_shape_entered(body_id, body, body_shape, area_shape):
+func _on_Area2D_body_entered(body):
 	print("Golpeo piso: ", hit, ', limit: ', limit)
 	if hit >= limit:
-		$Area2D/CollisionShape2D.disabled = true
-		$Area2D/CollisionShape2D2.disabled = true
+		$AnimationPlayer.play("fakefloordown")
+	position.y += 1
 	hit += 1
