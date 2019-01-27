@@ -33,7 +33,6 @@ shadow_enabled = true
 shadow_buffer_size = 512
 
 [node name="Sprite" type="Sprite" parent="."]
-light_mask = 0
 position = Vector2( 0, 40 )
 texture = ExtResource( 3 )
 offset = Vector2( 0, -48.69 )
