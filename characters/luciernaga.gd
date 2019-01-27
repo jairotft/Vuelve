@@ -52,7 +52,7 @@ func _physics_process(delta):
 
 
 func _on_Area2D_body_entered(body):
-	print("Ingreso para senial")
+	global.checkpointID = 'PRIMERO'
 	emit_signal("colicion_con_personaje")
 
 
