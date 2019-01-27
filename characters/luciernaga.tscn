@@ -36,6 +36,7 @@ position = Vector2( 75.7273, 35.7833 )
 script = ExtResource( 1 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+editor/display_folded = true
 position = Vector2( -0.149887, 7.14364 )
 shape = SubResource( 1 )
 disabled = true
