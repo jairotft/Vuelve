@@ -1,13 +1,13 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://props/FakeFloor.gd" type="Script" id=1]
 [ext_resource path="res://sprites/Texturas/suelofalso.png" type="Texture" id=2]
 
-[sub_resource type="RectangleShape2D" id=2]
+[sub_resource type="RectangleShape2D" id=1]
 
 extents = Vector2( 70.3755, 12.4103 )
 
-[sub_resource type="RectangleShape2D" id=1]
+[sub_resource type="RectangleShape2D" id=2]
 
 extents = Vector2( 68.181, 9.98146 )
 
@@ -64,6 +64,10 @@ tracks/3/keys = {
 "values": [ true, false ]
 }
 
+[sub_resource type="OccluderPolygon2D" id=4]
+
+polygon = PoolVector2Array( -430, -60, 430, -60, 430, 60, -430, 60 )
+
 [node name="FakeFloor" type="Node2D"]
 script = ExtResource( 1 )
 
@@ -73,7 +77,7 @@ collision_mask = 32
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="Area2D"]
 scale = Vector2( 6.4, 6.4 )
-shape = SubResource( 2 )
+shape = SubResource( 1 )
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 __meta__ = {
@@ -82,7 +86,7 @@ __meta__ = {
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
 scale = Vector2( 6.4, 6.4 )
-shape = SubResource( 1 )
+shape = SubResource( 2 )
 
 [node name="Sprite" type="Sprite" parent="StaticBody2D"]
 scale = Vector2( 6.72, 1 )
@@ -90,5 +94,8 @@ texture = ExtResource( 2 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 anims/fakefloordown = SubResource( 3 )
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="."]
+occluder = SubResource( 4 )
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_Area2D_body_entered"]
