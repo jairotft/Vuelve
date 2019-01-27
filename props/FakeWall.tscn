@@ -4,7 +4,7 @@
 
 [sub_resource type="RectangleShape2D" id=1]
 
-extents = Vector2( 12.7953, 207.119 )
+extents = Vector2( 13.2616, 207.501 )
 
 [sub_resource type="OccluderPolygon2D" id=2]
 
