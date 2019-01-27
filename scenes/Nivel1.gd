@@ -12,3 +12,8 @@ func _ready():
 
 func _do_when_character_died():
 	$Player.global_position = global.checkpoint
+
+
+func _do_when_character_hit_checkpoint():
+	if global.checkpointID == 'PRIMERO':
+		$PRIMERO.queue_free()
