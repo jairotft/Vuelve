@@ -14,5 +14,5 @@ func _ready():
 
 
 func _on_Node2D_body_entered(body):
-	global.checkpoint == global.posicionplayer
+	global.checkpoint = global.posicionplayer
 	queue_free()

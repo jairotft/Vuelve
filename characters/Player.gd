@@ -12,7 +12,7 @@ var landanim = true
 export var activado = true
 
 func _ready():
-	global.checkpoint == global_position
+	global.checkpoint = global_position
 
 func _physics_process(delta):
 	if Input.is_action_pressed("ui_right") and activado:
