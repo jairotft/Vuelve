@@ -1,11 +1,13 @@
 extends KinematicBody2D
 
+
 export var gravedad = 20
 export var velocidad = 60
 export var movimiento = Vector2()
 var UP = Vector2(0,-1)
 export var friccion = 1.3
 export var es_estatica = true
+export var imagen = "res://sprites/characters/luicernaga_mala.png"
 signal colicion_con_personaje
 
 
@@ -31,6 +33,8 @@ func is_enemy_in_botton():
 	return global.posicionplayer.y > position.y
 	
 func _ready():
+	print("texture: " + str(typeof($CollisionShape2D/Bicho.texture)))
+	$CollisionShape2D/Bicho.texture = load(imagen)
 	$AnimationPlayer.play("StandFly")
 
 func _physics_process(delta):
