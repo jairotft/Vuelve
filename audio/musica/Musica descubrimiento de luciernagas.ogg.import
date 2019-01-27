@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/Musica descubrimiento de luciernagas.ogg-2700a21a8a6ab960e69a43dba1510d6c.oggstr"
+
+[deps]
+
+source_file="res://audio/musica/Musica descubrimiento de luciernagas.ogg"
+dest_files=[ "res://.import/Musica descubrimiento de luciernagas.ogg-2700a21a8a6ab960e69a43dba1510d6c.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/Musica de fondo persecución entorno.ogg-4fbdf8f6f34661f67284b79177729ed0.oggstr"
+
+[deps]
+
+source_file="res://audio/musica/Musica de fondo persecución entorno.ogg"
+dest_files=[ "res://.import/Musica de fondo persecución entorno.ogg-4fbdf8f6f34661f67284b79177729ed0.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

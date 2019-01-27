@@ -2,7 +2,7 @@ extends Node2D
 
 func _ready():
 	$AnimationPlayer.play("inicio")
-	
+	global.setsong("res://audio/musica/Musica de Inicio.ogg")
 func _process(delta):
 	if Input.is_action_just_released("ui_accept"):
 		_on_Button_button_up()

@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/Sonido luciernaga persecucion.ogg-883395923515a810aa960e3d4fda4f75.oggstr"
+
+[deps]
+
+source_file="res://audio/musica/Sonido luciernaga persecucion.ogg"
+dest_files=[ "res://.import/Sonido luciernaga persecucion.ogg-883395923515a810aa960e3d4fda4f75.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

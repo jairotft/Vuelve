@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/Sonido cinematica1 entorno agudo amazonia.ogg-0f06c7fa2a3ee5a316c0d422e913a377.oggstr"
+
+[deps]
+
+source_file="res://audio/musica/Sonido cinematica1 entorno agudo amazonia.ogg"
+dest_files=[ "res://.import/Sonido cinematica1 entorno agudo amazonia.ogg-0f06c7fa2a3ee5a316c0d422e913a377.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

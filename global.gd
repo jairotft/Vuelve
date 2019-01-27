@@ -46,8 +46,7 @@ func _on_animationtransition_animation_finished(anim_name):
 			
 			
 func setsong(pathsong):
-	if pathsong != $songplayer.stream:
-		pathsongstatic = pathsong
-		transitingsong = true
+	pathsongstatic = pathsong
+	transitingsong = true
 	
 

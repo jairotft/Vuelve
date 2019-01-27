@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/Sonido luciernaga mala.ogg-79d20ac73391e8d5eb78e3206cb9adde.oggstr"
+
+[deps]
+
+source_file="res://audio/musica/Sonido luciernaga mala.ogg"
+dest_files=[ "res://.import/Sonido luciernaga mala.ogg-79d20ac73391e8d5eb78e3206cb9adde.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

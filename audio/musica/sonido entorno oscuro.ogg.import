@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/sonido entorno oscuro.ogg-16a313d57ec5d983c0b243163089144b.oggstr"
+
+[deps]
+
+source_file="res://audio/musica/sonido entorno oscuro.ogg"
+dest_files=[ "res://.import/sonido entorno oscuro.ogg-16a313d57ec5d983c0b243163089144b.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0
