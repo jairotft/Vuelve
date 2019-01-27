@@ -2,6 +2,8 @@ extends Node2D
 var posicionplayer = Vector2()
 var playercanmove = false
 var transition_scenetogo = ""
+var checkpoint = Vector2()
+
 func _process(delta):
 	if Input.is_action_just_pressed("ui_page_up"):
 		OS.window_fullscreen = !OS.window_fullscreen 
