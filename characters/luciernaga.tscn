@@ -19,7 +19,7 @@ extents = Vector2( 10, 4.87449 )
 length = 2.0
 loop = true
 tracks/0/type = "value"
-tracks/0/path = NodePath("CollisionShape2D:position")
+tracks/0/path = NodePath("../luciernaga/CollisionShape2D:position")
 tracks/0/interp = 2
 tracks/0/loop_wrap = true
 tracks/0/imported = false
@@ -36,7 +36,6 @@ position = Vector2( 75.7273, 35.7833 )
 script = ExtResource( 1 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-editor/display_folded = true
 position = Vector2( -0.149887, 7.14364 )
 shape = SubResource( 1 )
 disabled = true
@@ -71,6 +70,7 @@ mode = 2
 shadow_enabled = true
 
 [node name="Area2D" type="Area2D" parent="CollisionShape2D"]
+editor/display_folded = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CollisionShape2D/Area2D"]
 visible = false
