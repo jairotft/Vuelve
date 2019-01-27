@@ -24,13 +24,13 @@ position = Vector2( -1.50732, 12.0587 )
 shape = SubResource( 1 )
 
 [node name="Light2D" type="Light2D" parent="."]
-scale = Vector2( 5.73333, 5.73333 )
+scale = Vector2( 2.86667, 2.86667 )
 texture = ExtResource( 2 )
 color = Color( 1, 0.631373, 0.580392, 1 )
 energy = 2.08
 mode = 2
 shadow_enabled = true
-shadow_buffer_size = 256
+shadow_buffer_size = 512
 
 [node name="Sprite" type="Sprite" parent="."]
 light_mask = 0
