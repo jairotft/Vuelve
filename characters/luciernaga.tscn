@@ -41,6 +41,7 @@ shape = SubResource( 1 )
 disabled = true
 
 [node name="AlaIzquierdaori" type="Node2D" parent="CollisionShape2D"]
+editor/display_folded = true
 position = Vector2( 1.06543, -3.63498 )
 
 [node name="AlaIzquierda" type="Sprite" parent="CollisionShape2D/AlaIzquierdaori"]
