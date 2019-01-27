@@ -17,7 +17,7 @@ _global_script_class_icons={
 
 config/name="The_Return"
 run/main_scene="res://scenes/Inicio.tscn"
-boot_splash/image="res://sprites/Videos/intropantalla.png"
+boot_splash/image="res://sprites/Videos/VUELVEtexto.png"
 config/icon="res://icon.png"
 
 [autoload]

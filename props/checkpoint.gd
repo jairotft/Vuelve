@@ -11,6 +11,7 @@ func _on_Node2D_body_entered(body):
 		global.checkpoint = global.posicionplayer
 	if music_mode:
 		global.setsong(musicpath)
-	#global.checkpointID = checkpointID
+	if checkpointID !="" :
+		global.checkpointID = checkpointID
 	emit_signal("touched")
 	queue_free()

@@ -98,3 +98,5 @@ shadow_buffer_size = 256
 anims/jump = SubResource( 2 )
 anims/land = SubResource( 3 )
 
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+

@@ -9,7 +9,7 @@ func _process(delta):
 	if Input.is_action_just_released("ui_cancel"):
 		get_tree().quit()
 func _on_Button_button_up():
-	global.transition("res://scenes/Nivel1.tscn")
+	global.transition("res://scenes/intro.tscn")
 
 
 func _on_Timer_timeout():

@@ -11,8 +11,8 @@ var timesongstatic = 0.0
 var timesong = 0.0
 var volumentrans = 0
 var volumenmin = -30
-var volspeedout = 0.5
-var volspeedin = 1
+var volspeedout = 1.2
+var volspeedin = 1.2
 
 func _process(delta):
 	if Input.is_action_just_pressed("ui_page_up"):
@@ -23,9 +23,10 @@ func _process(delta):
 			AudioServer.set_bus_volume_db(1,volumentrans)
 		else:
 			$songplayer.stop()
-			$songplayer.stream = load (pathsongstatic)
-			$songplayer.play()
-			$songplayer.seek(timesongstatic)
+			if pathsongstatic != "nothing":
+				$songplayer.stream = load (pathsongstatic)
+				$songplayer.play()
+				$songplayer.seek(timesongstatic)
 			transitingsong = false
 	else:
 		if volumentrans < 0:
@@ -48,5 +49,7 @@ func _on_animationtransition_animation_finished(anim_name):
 func setsong(pathsong):
 	pathsongstatic = pathsong
 	transitingsong = true
-	
 
+func pausemusic():
+	pathsongstatic = "nothing"
+	transitingsong = true
