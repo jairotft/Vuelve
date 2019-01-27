@@ -25,6 +25,7 @@ export var autodestroy = false
 export var autoground = true
 const UP = Vector2(0,-1)
 signal end_dialog
+signal start_dialog
 export var interactoffset = Vector2()
 
 func _ready():
@@ -56,6 +57,8 @@ func _process(delta):
 	if not numero_de_textos == 0 and not disabled:
 		if (global_position+interactoffset).distance_to(global.posicionplayer) < distancia and Input.is_action_just_pressed("ui_accept"):
 			if numdetext < numero_de_textos+1:
+				if numdetext == 0:
+					emit_signal("start_dialog")
 				numdetext += 1
 				if numdetext == 1:
 					settext(texto1)

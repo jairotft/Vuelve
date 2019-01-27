@@ -138,4 +138,7 @@ rotation = 0.785398
 scale = Vector2( 28.2627, 37.5177 )
 texture = ExtResource( 2 )
 
+[node name="songplayer" type="AudioStreamPlayer" parent="."]
+bus = "music"
+
 [connection signal="animation_finished" from="animationtransition" to="." method="_on_animationtransition_animation_finished"]
