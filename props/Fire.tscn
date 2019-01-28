@@ -24,7 +24,7 @@ position = Vector2( -1.50732, 12.0587 )
 shape = SubResource( 1 )
 
 [node name="Light2D" type="Light2D" parent="."]
-scale = Vector2( 2.86667, 2.86667 )
+scale = Vector2( 3.51738, 3.51738 )
 texture = ExtResource( 2 )
 color = Color( 1, 0.631373, 0.580392, 1 )
 energy = 2.08
